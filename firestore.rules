@@ -1,0 +1,84 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function getUserRole() {
+      return request.auth.token.role != null ? request.auth.token.role : 'customer';
+    }
+
+    function isStaff() {
+      return isAuthenticated() && (
+        getUserRole() in ['staff', 'admin', 'super_admin'] ||
+        exists(/databases/$(database)/documents/users/$(request.auth.uid))
+      );
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (
+        getUserRole() in ['admin', 'super_admin'] ||
+        (exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['admin', 'super_admin'])
+      );
+    }
+
+    // Products catalog
+    match /products/{productId} {
+      // Public can read only active products. Staff can read all.
+      allow read: if resource.data.active == true || isStaff();
+      // Only authorized staff can create, update, or delete products
+      allow create, update, delete: if isStaff();
+    }
+
+    // Categories
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Banners
+    match /banners/{bannerId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Customer Inquiries
+    match /inquiries/{inquiryId} {
+      // Anyone can submit a non-binding store inquiry with consent
+      allow create: if request.resource.data.consent == true
+                    && request.resource.data.customerName is string
+                    && request.resource.data.phone is string;
+      // Only authorized staff can read, update status, and manage inquiries
+      allow read, update, delete: if isStaff();
+    }
+
+    // Inventory Movements & Audit Logs
+    match /inventoryMovements/{movementId} {
+      allow read, create: if isStaff();
+      allow update, delete: if isAdmin();
+    }
+
+    match /auditLogs/{logId} {
+      allow read, create: if isStaff();
+      allow update, delete: if false; // Immutable audit log
+    }
+
+    // Store Settings
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Authorized Users & Staff Profiles
+    match /users/{userId} {
+      allow read: if isStaff();
+      allow write: if isAdmin();
+    }
+
+  }
+}
