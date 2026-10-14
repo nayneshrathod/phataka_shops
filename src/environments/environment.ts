@@ -1,12 +1,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyDEMO-API-KEY-FOR-LOCAL-DEVELOPMENT",
-    authDomain: "pratik-phatake-demo.firebaseapp.com",
-    projectId: "pratik-phatake-demo",
-    storageBucket: "pratik-phatake-demo.firebasestorage.app",
-    messagingSenderId: "109876543210",
-    appId: "1:109876543210:web:abcdef1234567890abcdef"
+    apiKey: "AIzaSyAo2DNghKrS5SuZiAC0Tepxfr7xb6u7lt0",
+    authDomain: "pratik-phatake.firebaseapp.com",
+    projectId: "pratik-phatake",
+    storageBucket: "pratik-phatake.firebasestorage.app",
+    messagingSenderId: "688105902720",
+    appId: "1:688105902720:web:3bc726dd0f87f83d450c65",
+    measurementId: "G-ZTRLLR2YPP"
   },
   useEmulators: false,
   emulatorPorts: {
