@@ -154,3 +154,5 @@ Shop No. 12, Phatake Galli, Laxmi Road, Pune, Maharashtra 411030
 - **Phone:** +91 98220 12345  
 - **WhatsApp:** +91 98220 12345  
 - **Hours:** 9:00 AM – 10:00 PM (All 7 Days during festive seasons)
+#   p h a t a k a _ s h o p s  
+ 
