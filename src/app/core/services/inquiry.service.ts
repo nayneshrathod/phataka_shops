@@ -91,7 +91,12 @@ export class InquiryService {
 
     const fs = this.firebaseService.firestore;
     if (this.firebaseService.isLiveFirebase && fs) {
-      addDoc(collection(fs, 'inquiries'), newInquiry).catch(console.error);
+      try {
+        const clean = JSON.parse(JSON.stringify(newInquiry));
+        addDoc(collection(fs, 'inquiries'), clean).catch(console.error);
+      } catch (err) {
+        console.error('Inquiry Firestore sync error:', err);
+      }
     }
 
     return newInquiry;

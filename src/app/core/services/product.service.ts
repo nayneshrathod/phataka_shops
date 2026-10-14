@@ -120,6 +120,30 @@ export class ProductService {
       } catch (err) {
         console.warn('Firestore products fetch notice:', err);
       }
+
+      try {
+        const catSnap = await getDocs(collection(fs, 'categories'));
+        if (!catSnap.empty) {
+          const list: Category[] = [];
+          catSnap.forEach(d => list.push({ ...(d.data() as Category), id: d.id }));
+          this.categoriesSignal.set(list);
+          this.saveCategoriesCache(list);
+        }
+      } catch (err) {
+        console.warn('Firestore categories fetch notice:', err);
+      }
+
+      try {
+        const banSnap = await getDocs(collection(fs, 'banners'));
+        if (!banSnap.empty) {
+          const list: Banner[] = [];
+          banSnap.forEach(d => list.push({ ...(d.data() as Banner), id: d.id }));
+          this.bannersSignal.set(list);
+          this.saveBannersCache(list);
+        }
+      } catch (err) {
+        console.warn('Firestore banners fetch notice:', err);
+      }
     }
   }
 
@@ -236,6 +260,12 @@ export class ProductService {
     const updated = [...this.categoriesSignal(), newCat];
     this.categoriesSignal.set(updated);
     this.saveCategoriesCache(updated);
+
+    const fs = this.firebaseService.firestore;
+    if (this.firebaseService.isLiveFirebase && fs) {
+      setDoc(doc(fs, 'categories', newId), newCat).catch(console.error);
+    }
+
     return newCat;
   }
 
@@ -248,6 +278,12 @@ export class ProductService {
     updated[index] = { ...updated[index], ...updates };
     this.categoriesSignal.set(updated);
     this.saveCategoriesCache(updated);
+
+    const fs = this.firebaseService.firestore;
+    if (this.firebaseService.isLiveFirebase && fs) {
+      updateDoc(doc(fs, 'categories', id), updates).catch(console.error);
+    }
+
     return true;
   }
 
@@ -256,6 +292,12 @@ export class ProductService {
     const updated = current.filter(c => c.id !== id);
     this.categoriesSignal.set(updated);
     this.saveCategoriesCache(updated);
+
+    const fs = this.firebaseService.firestore;
+    if (this.firebaseService.isLiveFirebase && fs) {
+      deleteDoc(doc(fs, 'categories', id)).catch(console.error);
+    }
+
     return true;
   }
 
@@ -266,6 +308,12 @@ export class ProductService {
     const updated = [newBan, ...this.bannersSignal()];
     this.bannersSignal.set(updated);
     this.saveBannersCache(updated);
+
+    const fs = this.firebaseService.firestore;
+    if (this.firebaseService.isLiveFirebase && fs) {
+      setDoc(doc(fs, 'banners', newId), newBan).catch(console.error);
+    }
+
     return newBan;
   }
 
@@ -277,6 +325,12 @@ export class ProductService {
     updated[idx] = { ...updated[idx], ...updates };
     this.bannersSignal.set(updated);
     this.saveBannersCache(updated);
+
+    const fs = this.firebaseService.firestore;
+    if (this.firebaseService.isLiveFirebase && fs) {
+      updateDoc(doc(fs, 'banners', id), updates).catch(console.error);
+    }
+
     return true;
   }
 
@@ -284,6 +338,12 @@ export class ProductService {
     const updated = this.bannersSignal().filter(b => b.id !== id);
     this.bannersSignal.set(updated);
     this.saveBannersCache(updated);
+
+    const fs = this.firebaseService.firestore;
+    if (this.firebaseService.isLiveFirebase && fs) {
+      deleteDoc(doc(fs, 'banners', id)).catch(console.error);
+    }
+
     return true;
   }
 

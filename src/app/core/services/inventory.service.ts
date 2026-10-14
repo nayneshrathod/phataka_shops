@@ -94,7 +94,12 @@ export class InventoryService {
 
     const fs = this.firebaseService.firestore;
     if (this.firebaseService.isLiveFirebase && fs) {
-      addDoc(collection(fs, 'inventoryMovements'), newMovement).catch(console.error);
+      try {
+        const clean = JSON.parse(JSON.stringify(newMovement));
+        addDoc(collection(fs, 'inventoryMovements'), clean).catch(console.error);
+      } catch (err) {
+        console.error('Inventory movement Firestore sync error:', err);
+      }
     }
 
     return true;

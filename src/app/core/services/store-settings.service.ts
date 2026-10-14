@@ -3,7 +3,7 @@ import { StoreSettings } from '@core/models';
 import { DemoDataService } from './demo-data.service';
 import { AuditService } from './audit.service';
 import { FirebaseService } from './firebase.service';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, setDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,26 @@ export class StoreSettingsService {
   private readonly settingsSignal = signal<StoreSettings>(this.loadSettings());
 
   readonly settings = this.settingsSignal.asReadonly();
+
+  constructor() {
+    this.syncFromFirebaseIfConfigured();
+  }
+
+  private async syncFromFirebaseIfConfigured(): Promise<void> {
+    const fs = this.firebaseService.firestore;
+    if (this.firebaseService.isLiveFirebase && fs) {
+      try {
+        const snap = await getDoc(doc(fs, 'settings', 'store'));
+        if (snap.exists()) {
+          const val = snap.data() as StoreSettings;
+          this.settingsSignal.set(val);
+          this.saveSettings(val);
+        }
+      } catch (err) {
+        console.warn('Firestore store settings fetch notice:', err);
+      }
+    }
+  }
 
   private loadSettings(): StoreSettings {
     try {

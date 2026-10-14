@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "seed": "node scripts/seed-firestore-complete.js"
   },
   "private": true,
   "packageManager": "npm@11.12.0",

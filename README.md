@@ -23,12 +23,13 @@
    - [E. बहुभाषिक प्रणाली (Marathi, Hindi, English)](#e-बहुभाषिक-प्रणाली-3-languages)
    - [F. रोल-आधारित सुरक्षा आणि 4 रोल लॉगिन (Role-Based Access)](#f-रोल-आधारित-सुरक्षा-आणि-4-रोल-लॉगिन)
 4. [वापरलेली तंत्रज्ञाने (Technology Stack)](#4-वापरलेली-तंत्रज्ञाने-technology-stack)
-5. [प्रोजेक्ट फोल्डर रचना (Architecture & Folder Structure)](#5-प्रोजेक्ट-फोल्डर-रचना-folder-structure)
-6. [प्रोजेक्ट कसा चालवायचा? (How to Run Step-by-Step)](#6-प्रोजेक्ट-कसा-चालवायचा-how-to-run)
-7. [चाचण्या आणि प्रॉडक्शन बिल्ड (Testing & Production Build)](#7-चाचण्या-आणि-प्रॉडक्शन-बिल्ड-testing--build)
-8. [Firebase Hosting वर डिप्लॉयमेंट (Deployment to Firebase)](#8-firebase-hosting-वर-डिप्लॉयमेंट-deployment)
-9. [डेमो लॉगिन क्रेडेन्शियल्स (Demo Access Credentials)](#9-डेमो-लॉगिन-क्रेडेन्शियल्स-test-accounts)
-10. [दुकान संपर्क व परवाना माहिती (Store Credentials & Location)](#10-दुकान-संपर्क-व-परवाना-माहिती)
+5. [क्लाउड फायरस्टोअर डेटाबेस आणि सीडर (Cloud Firestore DB & Live Data Sync)](#5-क्लाउड-फायरस्टोअर-डेटाबेस-आणि-सीडर-cloud-firestore-db--sync)
+6. [प्रोजेक्ट फोल्डर रचना (Architecture & Folder Structure)](#6-प्रोजेक्ट-फोल्डर-रचना-folder-structure)
+7. [प्रोजेक्ट कसा चालवायचा? (How to Run Step-by-Step)](#7-प्रोजेक्ट-कसा-चालवायचा-how-to-run)
+8. [चाचण्या आणि प्रॉडक्शन बिल्ड (Testing & Production Build)](#8-चाचण्या-आणि-प्रॉडक्शन-बिल्ड-testing--build)
+9. [Firebase Hosting वर डिप्लॉयमेंट (Deployment to Firebase)](#9-firebase-hosting-वर-डिप्लॉयमेंट-deployment)
+10. [डेमो लॉगिन क्रेडेन्शियल्स (Demo Access Credentials)](#10-डेमो-लॉगिन-क्रेडेन्शियल्स-test-accounts)
+11. [दुकान संपर्क व परवाना माहिती (Store Credentials & Location)](#11-दुकान-संपर्क-व-परवाना-माहिती)
 
 ---
 
@@ -141,7 +142,61 @@ graph TD
 
 ---
 
-## 5. प्रोजेक्ट फोल्डर रचना (Folder Structure)
+## 5. क्लाउड फायरस्टोअर डेटाबेस आणि सीडर (Cloud Firestore DB & Live Data Sync)
+
+हा प्रोजेक्ट **Google Firebase Cloud Firestore** डेटाबेसशी पूर्णपणे जोडलेला आहे (Live Project: `pratik-phatake`). 
+
+### 🔥 थेट Firestore मध्ये साठवलेले डेटा सेट्स (Live Collections):
+1. **`products` (२५ फटाके उत्पादने)**:
+   - सर्व प्रकार: फुलबाज्या, भुईचक्र, अनार, फव्वारे, स्काय शॉट्स, कौटुंबिक कॉम्बो बॉक्सेस, CSIR-NEERI अधिकृत हरित फटाके, लहान मुलांचे सुरक्षित फटाके.
+   - प्रत्येक उत्पादनामध्ये SKU, Marathi/Hindi/English नावे, MRP, घाऊक दर, स्टॉक संख्या, सुरक्षितता मार्गदर्शक, आवाज पातळी आणि CSIR-NEERI ग्रीन क्यूआर कोड साठवला आहे.
+2. **`categories` (८ प्रमुख श्रेण्या)**:
+   - फुलबाज्या, भुईचक्र, अनार, रंगीबेरंगी कारंजे, स्काय शॉट्स, कौटुंबिक कॉम्बो, हरित फटाके, फॅन्सी फटाके.
+3. **`banners` (सण उत्सव बॅनर)**:
+   - भव्य दीपोत्सव महोत्सव २०२६ आणि पर्यावरणपूरक हरित फटाके दालन बॅनर.
+4. **`offers` (सण सवलती व कूपन्स)**:
+   - `DIWALI10`: ₹३,००० वर १०% सवलत.
+   - `FAMILY500`: ₹५,००० वर थेट ₹५०० रोख सवलत.
+   - `SKYSHOT15`: स्काय शॉट्सवर १५% विशेष सवलत.
+   - `VIPPHATAKE`: ₹१०,००० वर २०% भव्य कूपन.
+5. **`settings/store` (दुकान माहिती व परवाना)**:
+   - दुकानाचे नाव, पत्ता, PESO परवाना क्र (`PESO-PUN-RET-2024/7890`), GSTIN, अधिकृत सर्वोच्च न्यायालय सूचना.
+6. **`inquiries` (ग्राहक चौकशी नोंदी)**.
+7. **`inventoryMovements` (साठा आवक-जावक व नुकसान ऑडिट नोंदी)**.
+8. **`users` (सुपर ॲडमिन, व्यवस्थापक, काऊंटर स्टाफ आणि ग्राहक खाती)**.
+
+### ⚡ डेटाबेस सीडिंग कमांड (One-Click Firestore Seeder):
+सर्व डेटा एका क्लिकवर क्लाउड फायरस्टोअरमध्ये भरण्यासाठी:
+```powershell
+npm run seed
+# किंवा
+node scripts/seed-firestore-complete.js
+```
+**निकालाचा नमुना:**
+```text
+=============================================================
+PRATIK PHATAKE (प्रतीक फटाके) — Firestore Database Seeder
+Connecting to Cloud Firestore project: pratik-phatake
+=============================================================
+   Products in Firestore:            25
+   Categories in Firestore:          8
+   Banners in Firestore:             2
+   Offers in Firestore:              4
+   Inquiries in Firestore:           3
+   Inventory Movements in Firestore: 4
+   Users in Firestore:               4
+=============================================================
+ALL FIREBASE FIRESTORE DATA SUCCESSFULLY STORED & LIVE!
+```
+
+### 🔄 दुहेरी सिंक्रोनायझेशन (Bidirectional Sync):
+- जेव्हा ग्राहक किंवा ॲडमिन ॲप उघडतो, तेव्हा ॲप आपोआप Firestore मधून ताजी उत्पादने, कॅटेगरी व बॅनर लोड करतो (`syncFromFirebaseIfConfigured`).
+- ॲडमिन पॅनेलमध्ये नवीन फटाका, कॅटेगरी, ऑफर किंवा दुकान सेटिंग्ज बदलल्यास ते थेट Cloud Firestore मध्ये रिअल-टाइम सेव्ह होतात.
+- ऑफलाईन किंवा नेटवर्क अडथळा असल्यास ॲप्लिकेशन स्वयंचलित सुरक्षित LocalStorage Fallback कॅशेवर अविरत चालते.
+
+---
+
+## 6. प्रोजेक्ट फोल्डर रचना (Folder Structure)
 
 ```text
 d:\Hotel\
@@ -179,7 +234,7 @@ d:\Hotel\
 
 ---
 
-## 6. प्रोजेक्ट कसा चालवायचा? (How to Run)
+## 7. प्रोजेक्ट कसा चालवायचा? (How to Run Step-by-Step)
 
 ### आवश्यक आज्ञावली (Prerequisites)
 - **Node.js**: व्हर्जन `20.x` किंवा `22.x`
@@ -196,20 +251,25 @@ cd d:\Hotel
 npm install
 ```
 
-### स्टेप ३: डेव्हलपमेंट सर्व्हर सुरू करा (Start Development Server)
+### स्टेप ३: डेटाबेस सिंक/सीड करा (Seed Cloud Firestore Data)
+```powershell
+npm run seed
+```
+
+### स्टेप ४: डेव्हलपमेंट सर्व्हर सुरू करा (Start Development Server)
 ```powershell
 npm start
 # किंवा
 ng serve
 ```
 
-### स्टेप ४: ब्राउझरमध्ये उघडा (Open in Browser)
+### स्टेप ५: ब्राउझरमध्ये उघडा (Open in Browser)
 ब्राउझर उघडा आणि खालील पत्त्यावर जा:
 👉 **`http://localhost:4200`**
 
 ---
 
-## 7. चाचण्या आणि प्रॉडक्शन बिल्ड (Testing & Build)
+## 8. चाचण्या आणि प्रॉडक्शन बिल्ड (Testing & Build)
 
 ### स्वयंचलित युनिट चाचण्या चालवणे (Run Unit Tests)
 सर्व २९ युनिट चाचण्या चालवण्यासाठी खालील कमांड द्या:
@@ -232,9 +292,9 @@ npm run build
 
 ---
 
-## 8. Firebase Hosting वर डिप्लॉयमेंट (Deployment)
+## 9. Firebase Hosting वर डिप्लॉयमेंट (Deployment)
 
-हा प्रोजेक्ट **Firebase Hosting** वर आधीच थेट डिप्लॉय केलेला आहे. तुम्हाला पुन्हा डिप्लॉय करायचे असल्यास:
+हा प्रोजेक्ट **Firebase Hosting** वर थेट डिप्लॉय केलेला आहे. पुन्हा बिल्ड करून डिप्लॉय करण्यासाठी:
 
 ### स्टेप १: फायरबेस लॉगिन करा (जर आधी केले नसेल)
 ```powershell
@@ -246,7 +306,7 @@ firebase login
 firebase use pratik-phatake
 ```
 
-### स्टेप ३: बिल्ड करून थेट डिप्लॉय करा
+### स्टेप ३: बिल्ड करून थेट Hosting वर डिप्लॉय करा
 ```powershell
 npm run build
 firebase deploy --only hosting --project pratik-phatake
@@ -261,7 +321,7 @@ firebase deploy --only firestore:rules --project pratik-phatake
 
 ---
 
-## 9. डेमो लॉगिन क्रेडेन्शियल्स (Test Accounts)
+## 10. डेमो लॉगिन क्रेडेन्शियल्स (Test Accounts)
 
 लॉगिन पेजवर (`/login`) १-क्लिक प्रिसेट बटणे दिलेली आहेत. तुम्ही खालील क्रेडेन्शियल्स वापरून चाचणी करू शकता:
 
@@ -274,7 +334,7 @@ firebase deploy --only firestore:rules --project pratik-phatake
 
 ---
 
-## 10. दुकान संपर्क व परवाना माहिती
+## 11. दुकान संपर्क व परवाना माहिती
 
 **प्रतीक फटाके (PRATIK PHATAKE)**  
 दुकान क्र. १२, फटाके गल्ली, लक्ष्मी रोड, पुणे, महाराष्ट्र ४११०३०  

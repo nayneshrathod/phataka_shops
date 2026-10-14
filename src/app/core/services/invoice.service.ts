@@ -330,7 +330,12 @@ export class InvoiceService {
     // 8. Sync to Firestore if live
     const fs = this.firebaseService.firestore;
     if (this.firebaseService.isLiveFirebase && fs) {
-      setDoc(doc(fs, 'invoices', invoiceId), invoice).catch(console.error);
+      try {
+        const cleanInvoice = JSON.parse(JSON.stringify(invoice));
+        setDoc(doc(fs, 'invoices', invoiceId), cleanInvoice).catch(console.error);
+      } catch (err) {
+        console.error('Invoice Firestore sync error:', err);
+      }
     }
 
     return { success: true, invoice };
@@ -431,7 +436,12 @@ export class InvoiceService {
 
     const fs = this.firebaseService.firestore;
     if (this.firebaseService.isLiveFirebase && fs) {
-      updateDoc(doc(fs, 'invoices', id), updates).catch(console.error);
+      try {
+        const cleanUpdates = JSON.parse(JSON.stringify(updates));
+        updateDoc(doc(fs, 'invoices', id), cleanUpdates).catch(console.error);
+      } catch (err) {
+        console.error('Invoice update Firestore error:', err);
+      }
     }
     return true;
   }
