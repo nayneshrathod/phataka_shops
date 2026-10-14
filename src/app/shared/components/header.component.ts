@@ -14,24 +14,31 @@ import { SupportedLang } from '@core/i18n/translations';
   imports: [CommonModule, RouterModule, TranslatePipe],
   template: `
     <!-- Top Statutory & Festive Ribbon -->
-    <div class="bg-gradient-to-r from-purple-950 via-indigo-950 to-purple-950 text-amber-300 text-[11px] sm:text-xs py-2 px-3 sm:px-6 border-b border-amber-400/20 shadow-xs">
-      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 sm:gap-4">
+    <!-- Top Statutory & Festive Ribbon -->
+    <div class="bg-gradient-to-r from-purple-950 via-indigo-950 to-purple-950 text-amber-300 text-[10px] sm:text-xs py-1.5 px-3 sm:px-6 border-b border-amber-400/20 shadow-xs">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
         <!-- License & Eco Notice -->
-        <div class="flex items-center gap-2 font-medium text-center sm:text-left">
-          <span class="inline-block animate-pulse text-xs">🪔</span>
-          <span>{{ 'legal.pesoCertified' | translate }}: <strong class="text-amber-200 font-mono">{{ settingsService.settings().licenseNumber }}</strong></span>
-          <span class="hidden md:inline text-amber-400/40">•</span>
-          <span class="hidden md:inline text-amber-200/90">{{ 'legal.greenCrackers' | translate }}</span>
+        <div class="flex items-center gap-1.5 font-medium truncate">
+          <span class="inline-block animate-pulse text-xs flex-shrink-0">🪔</span>
+          <span class="truncate">
+            <span class="hidden sm:inline">{{ 'legal.pesoCertified' | translate }}:</span>
+            <span class="sm:hidden">PESO:</span>
+            <strong class="text-amber-200 font-mono ml-0.5">{{ settingsService.settings().licenseNumber }}</strong>
+          </span>
+          <span class="hidden lg:inline text-amber-400/40">•</span>
+          <span class="hidden lg:inline text-amber-200/90">{{ 'legal.greenCrackers' | translate }}</span>
         </div>
 
         <!-- Contact & WhatsApp -->
-        <div class="flex items-center gap-4 font-semibold text-[11px] sm:text-xs">
+        <div class="flex items-center gap-2 sm:gap-4 font-semibold text-[10px] sm:text-xs flex-shrink-0">
           <a
             [href]="'tel:' + settingsService.settings().contactNumber"
-            class="text-white/80 hover:text-white transition-colors flex items-center gap-1"
+            class="text-white/90 hover:text-white transition-colors flex items-center gap-1"
+            title="थेट कॉल करा"
           >
             <span>📞</span>
-            <span class="font-mono">{{ settingsService.settings().contactNumber }}</span>
+            <span class="font-mono hidden sm:inline">{{ settingsService.settings().contactNumber }}</span>
+            <span class="font-mono sm:hidden">कॉल</span>
           </a>
           <span class="text-amber-400/40">•</span>
           <a
@@ -39,9 +46,10 @@ import { SupportedLang } from '@core/i18n/translations';
             target="_blank"
             rel="noopener noreferrer"
             class="text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-bold transition-colors"
+            title="WhatsApp चॅट"
           >
             <span>💬</span>
-            <span>WhatsApp</span>
+            <span class="hidden xs:inline">WhatsApp</span>
           </a>
         </div>
       </div>
@@ -49,24 +57,24 @@ import { SupportedLang } from '@core/i18n/translations';
 
     <!-- Main Navigation Header -->
     <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-purple-100 shadow-xs transition-all">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-20 gap-2 sm:gap-4">
+      <div class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 sm:h-20 gap-1.5 sm:gap-4">
           
           <!-- Brand Logo Section -->
-          <a routerLink="/" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none flex-shrink-0">
-            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-purple-700 via-indigo-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-purple-600/30 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
-              <span class="text-xl sm:text-2xl animate-bounce">✨</span>
+          <a routerLink="/" class="flex items-center gap-2 sm:gap-3 group focus:outline-none min-w-0 flex-shrink-0">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-gradient-to-tr from-purple-700 via-indigo-600 to-amber-500 flex items-center justify-center text-white shadow-md shadow-purple-600/30 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+              <span class="text-lg sm:text-2xl animate-bounce">✨</span>
             </div>
-            <div>
-              <div class="flex items-center gap-1.5 sm:gap-2">
-                <span class="text-xl sm:text-2xl font-black tracking-tight text-purple-950 font-serif leading-none">
+            <div class="min-w-0">
+              <div class="flex items-center gap-1 sm:gap-2">
+                <span class="text-base sm:text-xl md:text-2xl font-black tracking-tight text-purple-950 font-serif leading-none truncate">
                   {{ 'brand.name' | translate }}
                 </span>
-                <span class="px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 flex items-center gap-0.5">
+                <span class="hidden md:inline-flex px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 rounded-full border border-emerald-300 items-center gap-0.5 flex-shrink-0">
                   <span>🌱</span> {{ 'header.greenBadge' | translate }}
                 </span>
               </div>
-              <p class="text-[10px] sm:text-xs font-semibold tracking-wider text-purple-600 uppercase mt-0.5">
+              <p class="text-[9px] sm:text-xs font-semibold tracking-wider text-purple-600 uppercase mt-0.5 truncate">
                 {{ 'brand.subtitle' | translate }}
               </p>
             </div>
@@ -127,21 +135,22 @@ import { SupportedLang } from '@core/i18n/translations';
             </a>
           </nav>
 
-          <!-- Right Action Section (Language, Cart, CTA, Auth) -->
-          <div class="flex items-center gap-2 sm:gap-2.5">
+          <!-- Right Action Section (Language, Cart, CTA, Auth, Menu) -->
+          <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
             
             <!-- Sleek Compact Language Dropdown -->
             <div class="relative" #langDropdownContainer>
               <button
                 type="button"
                 (click)="toggleLangDropdown()"
-                class="px-2.5 py-1.5 rounded-xl border border-purple-200/80 bg-purple-50/70 hover:bg-purple-100 text-xs font-bold text-purple-900 transition-all flex items-center gap-1.5 focus:outline-none shadow-2xs cursor-pointer"
+                class="px-2 py-1.5 sm:px-2.5 sm:py-1.5 rounded-xl border border-purple-200/80 bg-purple-50/70 hover:bg-purple-100 text-xs font-bold text-purple-900 transition-all flex items-center gap-1 sm:gap-1.5 focus:outline-none shadow-2xs cursor-pointer"
                 [attr.aria-expanded]="langDropdownOpen()"
                 title="भाषा बदला (Change Language)"
               >
                 <span>{{ currentLanguageObj().flag }}</span>
-                <span class="font-bold">{{ currentLanguageObj().label }}</span>
-                <span class="text-[10px] text-purple-600 transition-transform duration-200" [ngClass]="{'rotate-180': langDropdownOpen()}">▾</span>
+                <span class="hidden sm:inline font-bold">{{ currentLanguageObj().label }}</span>
+                <span class="sm:hidden font-bold text-[11px]">{{ currentLanguageObj().code.toUpperCase() }}</span>
+                <span class="text-[9px] sm:text-[10px] text-purple-600 transition-transform duration-200" [ngClass]="{'rotate-180': langDropdownOpen()}">▾</span>
               </button>
 
               @if (langDropdownOpen()) {
@@ -172,21 +181,21 @@ import { SupportedLang } from '@core/i18n/translations';
               }
             </div>
 
-            <!-- Customer Inquiry Cart Button -->
+            <!-- Customer Inquiry Cart Button (Header) -->
             <a
               routerLink="/inquiry-cart"
-              class="relative p-2 text-slate-700 hover:text-purple-700 hover:bg-purple-50 rounded-xl transition-all flex items-center justify-center focus:outline-none cursor-pointer"
+              class="relative p-1.5 sm:p-2 text-slate-700 hover:text-purple-700 hover:bg-purple-50 rounded-xl transition-all flex items-center justify-center focus:outline-none cursor-pointer"
               [title]="'nav.cart' | translate"
             >
-              <span class="text-xl">🛒</span>
+              <span class="text-lg sm:text-xl">🛒</span>
               @if (inquiryCartService.itemCount() > 0) {
-                <span class="absolute -top-1 -right-1 min-w-[20px] h-5 px-1 rounded-full bg-rose-600 text-white text-[10px] font-black flex items-center justify-center shadow-md animate-pulse">
+                <span class="absolute -top-1 -right-1 min-w-[18px] h-4.5 sm:min-w-[20px] sm:h-5 px-1 rounded-full bg-rose-600 text-white text-[9px] sm:text-[10px] font-black flex items-center justify-center shadow-md animate-pulse">
                   {{ inquiryCartService.itemCount() }}
                 </span>
               }
             </a>
 
-            <!-- Inquire CTA Button (Hidden on small tablets, visible on larger screens) -->
+            <!-- Inquire CTA Button (Hidden on mobile/tablet) -->
             <a
               routerLink="/inquiry"
               class="hidden sm:inline-flex items-center justify-center gap-1.5 px-3.5 2xl:px-4 py-2 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-purple-700 to-indigo-600 hover:from-purple-800 hover:to-indigo-700 shadow-md shadow-purple-600/25 hover:shadow-lg transition-all active:scale-95 whitespace-nowrap"
@@ -199,21 +208,21 @@ import { SupportedLang } from '@core/i18n/translations';
             @if (!authService.isAuthenticated()) {
               <a
                 routerLink="/login"
-                class="px-3 py-2 text-xs font-bold text-slate-700 hover:text-purple-900 bg-purple-50 hover:bg-purple-100 rounded-xl transition-all flex items-center gap-1.5 border border-purple-200/80 shadow-2xs whitespace-nowrap cursor-pointer"
+                class="px-2 py-1.5 sm:px-3 sm:py-2 text-xs font-bold text-slate-700 hover:text-purple-900 bg-purple-50 hover:bg-purple-100 rounded-xl transition-all flex items-center gap-1 border border-purple-200/80 shadow-2xs whitespace-nowrap cursor-pointer"
                 [title]="'nav.login' | translate"
               >
                 <span>🔐</span>
-                <span>{{ 'nav.login' | translate }}</span>
+                <span class="hidden sm:inline">{{ 'nav.login' | translate }}</span>
               </a>
             } @else {
               @if (authService.isStaff()) {
-                <div class="flex items-center gap-1 bg-slate-900 text-white pl-2 pr-1 py-1 rounded-xl text-xs border border-slate-800 shadow-sm flex-shrink-0">
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400 font-mono">
-                    {{ authService.isSuperAdmin() ? '👑 S-ADM' : (authService.isAdmin() ? '👔 ADM' : '⚡ STF') }}
+                <div class="flex items-center gap-1 bg-slate-900 text-white pl-1.5 pr-1 py-1 rounded-xl text-xs border border-slate-800 shadow-sm flex-shrink-0">
+                  <span class="text-[9px] font-bold uppercase tracking-wider text-amber-400 font-mono">
+                    {{ authService.isSuperAdmin() ? '👑' : (authService.isAdmin() ? '👔' : '⚡') }}
                   </span>
                   <a
                     [routerLink]="authService.isAdmin() ? '/admin/dashboard' : '/admin/billing'"
-                    class="px-2 py-0.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-bold text-[11px] transition-colors whitespace-nowrap"
+                    class="px-1.5 py-0.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-bold text-[10px] sm:text-[11px] transition-colors whitespace-nowrap"
                     title="व्यवस्थापक पोर्टल"
                   >
                     {{ 'nav.portal' | translate }}
@@ -221,22 +230,22 @@ import { SupportedLang } from '@core/i18n/translations';
                   <button
                     type="button"
                     (click)="authService.logout('/')"
-                    class="p-1 text-slate-400 hover:text-rose-400 text-xs font-bold transition-colors cursor-pointer"
+                    class="p-0.5 text-slate-400 hover:text-rose-400 text-xs font-bold transition-colors cursor-pointer"
                     [title]="'nav.logout' | translate"
                   >
                     🚪
                   </button>
                 </div>
               } @else {
-                <div class="flex items-center gap-1.5 bg-purple-50 text-purple-950 px-2.5 py-1.5 rounded-xl text-xs border border-purple-200 flex-shrink-0">
-                  <span class="font-bold truncate max-w-[80px]">👤 {{ authService.currentUser()?.displayName?.split(' ')[0] || ('role.customer' | translate) }}</span>
+                <div class="flex items-center gap-1 bg-purple-50 text-purple-950 px-2 py-1 rounded-xl text-xs border border-purple-200 flex-shrink-0">
+                  <span class="font-bold truncate max-w-[50px] sm:max-w-[80px]">👤 {{ authService.currentUser()?.displayName?.split(' ')[0] || ('role.customer' | translate) }}</span>
                   <button
                     type="button"
                     (click)="authService.logout('/')"
-                    class="text-rose-600 hover:text-rose-800 font-bold text-[11px] cursor-pointer"
+                    class="text-rose-600 hover:text-rose-800 font-bold text-[10px] cursor-pointer"
                     [title]="'nav.logout' | translate"
                   >
-                    {{ 'nav.logout' | translate }}
+                    🚪
                   </button>
                 </div>
               }
@@ -246,10 +255,10 @@ import { SupportedLang } from '@core/i18n/translations';
             <button
               type="button"
               (click)="toggleMobileMenu()"
-              class="xl:hidden p-2 rounded-xl text-slate-700 hover:bg-purple-50 hover:text-purple-700 focus:outline-none cursor-pointer"
+              class="xl:hidden p-1.5 sm:p-2 rounded-xl text-slate-700 hover:bg-purple-50 hover:text-purple-700 focus:outline-none cursor-pointer flex-shrink-0"
               aria-label="Toggle navigation menu"
             >
-              <span class="text-2xl leading-none">{{ mobileMenuOpen() ? '✕' : '☰' }}</span>
+              <span class="text-xl sm:text-2xl leading-none">{{ mobileMenuOpen() ? '✕' : '☰' }}</span>
             </button>
           </div>
 
@@ -258,12 +267,12 @@ import { SupportedLang } from '@core/i18n/translations';
 
       <!-- Mobile & Tablet Navigation Drawer (Smooth Animated Dropdown) -->
       @if (mobileMenuOpen()) {
-        <div class="xl:hidden bg-white border-t border-purple-100 px-4 pt-3 pb-6 space-y-3 shadow-2xl animate-in slide-in-from-top-4 duration-200 max-h-[85vh] overflow-y-auto">
+        <div class="xl:hidden bg-white border-t border-purple-100 px-4 pt-3 pb-32 space-y-3 shadow-2xl animate-in slide-in-from-top-4 duration-200 max-h-[calc(100vh-80px)] overflow-y-auto">
           
           <!-- Mobile Language Switcher Row -->
-          <div class="p-3 bg-purple-50/80 rounded-2xl border border-purple-100 flex items-center justify-between">
+          <div class="p-3 bg-purple-50/80 rounded-2xl border border-purple-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <span class="text-xs font-bold text-purple-950">🌐 भाषा निवडा (Language):</span>
-            <div class="flex items-center gap-1">
+            <div class="grid grid-cols-3 gap-1.5 w-full sm:w-auto">
               @for (l of translationService.availableLanguages; track l.code) {
                 <button
                   type="button"
@@ -272,7 +281,7 @@ import { SupportedLang } from '@core/i18n/translations';
                     'bg-purple-700 text-white font-bold shadow-xs': translationService.currentLang() === l.code,
                     'bg-white text-slate-700 hover:bg-purple-100 font-medium': translationService.currentLang() !== l.code
                   }"
-                  class="px-2.5 py-1 text-xs rounded-lg transition-all flex items-center gap-1 cursor-pointer"
+                  class="px-2 py-1.5 text-xs rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer border border-purple-200/50"
                 >
                   <span>{{ l.flag }}</span>
                   <span>{{ l.label }}</span>

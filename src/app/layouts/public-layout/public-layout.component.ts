@@ -20,9 +20,9 @@ import { PwaPromptComponent } from '@shared/components/pwa-prompt.component';
     PwaPromptComponent
   ],
   template: `
-    <div class="min-h-screen flex flex-col bg-[#FAF9FF] text-[#171323] selection:bg-purple-200 selection:text-purple-900">
+    <div class="min-h-screen flex flex-col bg-[#FAF9FF] text-[#171323] selection:bg-purple-200 selection:text-purple-900 overflow-x-hidden w-full relative">
       <app-header />
-      <main class="flex-1 pb-16 md:pb-0">
+      <main class="flex-1 w-full overflow-x-hidden">
         <router-outlet />
       </main>
       <app-footer />
