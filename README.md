@@ -1,158 +1,289 @@
 # PRATIK PHATAKE (प्रतीक फटाके)
-### Authorized Fireworks Retail Business Management & Multilingual Product Catalog
+### 🎆 अधिकृत व परवानाधारक फटाके दालन व्यवस्थापन आणि POS बिलिंग सॉफ्टवेअर
+### Licensed Fireworks Retail Management, Customer Inquiry Cart & In-Store POS Billing Suite
 
-[![Angular](https://img.shields.io/badge/Angular-22.2.2-DD0031?style=flat&logo=angular)](https://angular.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
-[![Firebase](https://img.shields.io/badge/Firebase-Auth%20%7C%20Firestore%20%7C%20Storage-FFCA28?style=flat&logo=firebase)](https://firebase.google.com/)
-[![PESO Certified](https://img.shields.io/badge/PESO-Certified%20Retailer-green?style=flat)](https://peso.gov.in/)
-[![Green Crackers](https://img.shields.io/badge/CSIR--NEERI-Green%20Crackers-emerald?style=flat)](https://www.neeri.res.in/)
-
----
-
-## 1. Business & Legal Overview
-
-**PRATIK PHATAKE (प्रतीक फटाके)** is a production-ready, digital fireworks business management platform and customer catalog web application built for an authorized, licensed retail fireworks establishment in Pune, Maharashtra.
-
-### ⚖️ Statutory Legal Compliance Notice
-In strict accordance with Indian legal frameworks, the Supreme Court of India directives, and PESO (Petroleum and Explosives Safety Organisation) retail regulations:
-- **Zero Online Checkout or Transactions:** The platform **strictly prohibits and excludes** online payment gateways, digital shopping carts for explosive materials, and courier home-delivery mechanisms.
-- **Store-Visit Inquiry Model:** The application operates on an authentic **digital catalog exploration and non-binding store inquiry** model.
-- **Green Crackers Certification:** Every listed firework is categorized under verified CSIR-NEERI Green Cracker formulations (SWAS, STAR, SAFAL) offering 30% lower particulate emissions and barium-free compositions.
+[![Live Hosting](https://img.shields.io/badge/Live_Website-pratik--phatake.web.app-5521B5?style=for-the-badge&logo=firebase&logoColor=white)](https://pratik-phatake.web.app)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-phataka__shops-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nayneshrathod/phataka_shops.git)
+[![Angular](https://img.shields.io/badge/Angular-22.2.2-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-Hosting%20%7C%20Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![PESO Certified](https://img.shields.io/badge/PESO-Certified%20Retailer-green?style=for-the-badge)](https://peso.gov.in/)
+[![CSIR NEERI](https://img.shields.io/badge/CSIR--NEERI-Green%20Crackers-emerald?style=for-the-badge)](https://www.neeri.res.in/)
 
 ---
 
-## 2. Technology Stack
-
-- **Frontend Framework:** Angular **22.2.2** (Standalone Components, Signals, OnPush change detection, Reactive Forms)
-- **Styling & UI:** Tailwind CSS **4.3.3** (Tailwind v4 PostCSS integration, `@theme` token blocks, custom responsive festive palettes)
-- **Cloud Infrastructure:** Firebase (Authentication, Cloud Firestore, Firebase Storage, Firebase Hosting)
-- **Internationalization (i18n):** Native signal-based Multilingual Translation Engine supporting **Marathi (मराठी - Default)**, **Hindi (हिंदी)**, and **English**.
-- **Testing Engine:** Vitest + Angular Build Unit Test runner.
-
----
-
-## 3. Key Features
-
-### 🎆 Customer-Facing Public Experience
-1. **Festive Homepage (`/`):**
-   - High-impact visual hero banner with sparkle ambiance and Devanagari typography.
-   - Category exploration tiles (Sparklers, Chakkars, Flower Pots, Fountains, Sky Shots, Assortments, Green Crackers, Novelties).
-   - Featured & best-selling fireworks carousel.
-   - Statutory compliance alert container.
-   - Physical store details, timings, phone call trigger, and Google Maps direction launcher.
-2. **Dynamic Product Catalog (`/products`):**
-   - Live instant search by firework name (Marathi/Hindi/English) and SKU.
-   - Category filtering pills with smooth transitions.
-   - Price-range sorting (Low to High, High to Low, Popularity, Alphabetical).
-   - In-stock availability toggle filter and responsive pagination.
-3. **Product Details View (`/products/:slug`):**
-   - High-resolution gallery with thumbnail switcher.
-   - Retail price and stock level indicator.
-   - Technical specifications: sound rating, visual effect, pieces per pack.
-   - CSIR-NEERI green cracker identification code.
-   - Product safety instructions and pre-filled inquiry launcher.
-   - Related fireworks recommendations.
-4. **All Categories Page (`/categories`):** Visual card breakdown of all 8 fireworks categories.
-5. **Festive Offers (`/offers`):** Curated Diwali family packages and festival hampers.
-6. **Store Stock Inquiry (`/inquiry`):**
-   - Non-binding customer inquiry form with multi-product selection.
-   - Mandatory statutory compliance consent checkbox.
-   - Automatic unique tracking reference generation (`INQ-2026-XXXX`).
-   - Direct WhatsApp launcher pre-formatted with inquiry items.
-7. **Safety & Regulations (`/safety`):** Official Do's and Don'ts, child safety rules, storage protocols, emergency helpline numbers (101, 108, 112).
-8. **About Us (`/about`) & Contact (`/contact`):** Business credentials, PESO license disclosures, and physical store locator.
+## 📖 अनुक्रमणिका / Table of Contents
+1. [प्रोजेक्ट काय आहे? (What is this Project?)](#1-प्रोजेक्ट-काय-आहे-what-is-this-project)
+2. [हा प्रोजेक्ट का बनवला आहे? (Why was this built? - Business & Legal Purpose)](#2-हा-प्रोजेक्ट-का-बनवला-आहे-why-was-this-built)
+3. [मुख्य वैशिष्ट्ये (Key Features)](#3-मुख्य-वैशिष्ट्ये-key-features)
+   - [A. ग्राहक पोर्टल व अंदाजे बिल पावती (Customer Portal & Quotation Bill)](#a-ग्राहक-पोर्टल-व-अंदाजे-बिल-पावती)
+   - [B. काउंटर POS बिलिंग टर्मिनल (In-Store POS Billing Counter)](#b-काउंटर-pos-बिलिंग-टर्मिनल)
+   - [C. कमाल आयटम्स बिल फॉरमॅट्स व प्रिंटिंग (Max Items Bill Sizing & Printing)](#c-कमाल-आयटम्स-बिल-फॉरमॅट्स-व-प्रिंटिंग)
+   - [D. थेट मोबाईलवर WhatsApp बिल शेअरिंग (Direct WhatsApp Sharing)](#d-थेट-मोबाईलवर-whatsapp-बिल-शेअरिंग)
+   - [E. बहुभाषिक प्रणाली (Marathi, Hindi, English)](#e-बहुभाषिक-प्रणाली-3-languages)
+   - [F. रोल-आधारित सुरक्षा आणि 4 रोल लॉगिन (Role-Based Access)](#f-रोल-आधारित-सुरक्षा-आणि-4-रोल-लॉगिन)
+4. [वापरलेली तंत्रज्ञाने (Technology Stack)](#4-वापरलेली-तंत्रज्ञाने-technology-stack)
+5. [प्रोजेक्ट फोल्डर रचना (Architecture & Folder Structure)](#5-प्रोजेक्ट-फोल्डर-रचना-folder-structure)
+6. [प्रोजेक्ट कसा चालवायचा? (How to Run Step-by-Step)](#6-प्रोजेक्ट-कसा-चालवायचा-how-to-run)
+7. [चाचण्या आणि प्रॉडक्शन बिल्ड (Testing & Production Build)](#7-चाचण्या-आणि-प्रॉडक्शन-बिल्ड-testing--build)
+8. [Firebase Hosting वर डिप्लॉयमेंट (Deployment to Firebase)](#8-firebase-hosting-वर-डिप्लॉयमेंट-deployment)
+9. [डेमो लॉगिन क्रेडेन्शियल्स (Demo Access Credentials)](#9-डेमो-लॉगिन-क्रेडेन्शियल्स-test-accounts)
+10. [दुकान संपर्क व परवाना माहिती (Store Credentials & Location)](#10-दुकान-संपर्क-व-परवाना-माहिती)
 
 ---
 
-### 🛡️ Back-Office Admin Suite (`/admin`)
-1. **Executive Dashboard (`/admin/dashboard`):**
-   - Real-time KPI metrics: Total Products, Active Catalog, Out of Stock, Low Stock Warnings, Total Inquiries, Pending Inquiries, Inventory Valuation (₹).
-   - Recent inquiries table with quick status transitions.
-   - Critical low-stock warning table.
-   - Live audit trail log feed.
-2. **Product Catalog CRUD (`/admin/products`):**
-   - Add/Edit/Delete products with reactive forms and validation.
-   - Image URL preview, multilingual labels, retail and cost pricing (restricted).
-   - CSV export and import.
-3. **Inventory Movements & Stock Adjustment (`/admin/inventory`):**
-   - Atomic inventory adjustments: `STOCK_IN`, `STOCK_OUT`, `DAMAGE`, `ADJUSTMENT`.
-   - Comprehensive movement history audit table with delta, previous/new quantities, reasons, and user timestamps.
-4. **Inquiry Pipeline Tracking (`/admin/inquiries`):**
-   - Lifecycle stages: `New` ➔ `Contacted` ➔ `In Review` ➔ `Closed` ➔ `Cancelled`.
-   - Staff internal notes modal.
-   - Click-to-call phone and WhatsApp contact launcher.
-   - Date filtering and CSV export.
-5. **Customer Directory (`/admin/customers`):** Consolidated inquiring customer profiles with inquiry counts and consent records.
-6. **Campaign Banners (`/admin/banners`):** Promotional hero banner scheduling with start and end dates.
-7. **Category Manager (`/admin/categories`):** Dynamic category hierarchy, sort order, and status toggles.
-8. **Business Reports (`/admin/reports`):**
-   - Printable Inventory Valuation Statement.
-   - Low-Stock Reorder Report.
-   - Customer Interest Ranking.
-   - CSV exports and print preview.
-9. **Staff Authorization (`/admin/users`):**
-   - Role-based authorization (`Super Admin`, `Store Manager / Admin`, `Staff`).
-10. **Store Settings (`/admin/settings`):**
-    - Store details, phone, WhatsApp, physical address, business hours, license credentials, GSTIN, and statutory legal disclosures.
-    - One-click "Reset Catalog to Demo Data" trigger.
+## 1. प्रोजेक्ट काय आहे? (What is this Project?)
+
+**प्रतीक फटाके (PRATIK PHATAKE)** हा पुणे, महाराष्ट्र येथील अधिकृत व परवानाधारक फटाके किरकोळ विक्री दालनासाठी विकसित केलेला एक आधुनिक, हाय-परफॉर्मन्स, रिस्पॉन्सिव्ह आणि क्लाउड-इंटिग्रेटेड वेब ॲप्लिकेशन व POS बिलिंग प्लॅटफॉर्म आहे.
+
+हे ॲप्लिकेशन दोन प्रमुख कार्यप्रणालींमध्ये (Dual Workflows) विभागले आहे:
+1. **पब्लिक ग्राहक प्लॅटफॉर्म (Public Customer Website & Inquiry Cart)**:
+   - ग्राहक दुकानातील सर्व फटाक्यांचा कॅटलॉग, CSIR-NEERI हरित फटाके प्रमाणीकरण, ध्वनी/प्रकाश तपशील आणि अंदाजे दर पाहू शकतात.
+   - फटाके निवडून **आवड यादी / अंदाजे कोटेशन बिल पावती (Estimate Quotation Bill)** तयार करू शकतात.
+   - ही पावती PDF डाऊनलोड, PNG इमेज, प्रिंट किंवा थेट स्वतःच्या WhatsApp वर शेअर करू शकतात.
+2. **दुकान व्यवस्थापक व कॅशियर POS सिस्टीम (Authorized Store POS & Admin ERP)**:
+   - दुकानातील काऊंटरवर जलद **POS बिलिंग (Counter Billing)**.
+   - बारकोड स्कॅनिंग, आयटम-निहाय सवलती, सण कॉम्बो ऑफर्स, GST कर विभागणी (CGST + SGST).
+   - A4 टॅक्स इनव्हॉइस, 80mm थर्मल रोल पावती व व्हॉट्सॲप कार्ड फॉरमॅट.
+   - स्वयंचलित साठा कपात (Atomic Stock Sync), परतावा व रद्द व्यवस्थापन (Returns), ग्राहक माहिती आणि फायनान्शियल अहवाल.
 
 ---
 
-## 4. Quick Start & Local Development
+## 2. हा प्रोजेक्ट का बनवला आहे? (Why was this built?)
 
-### Prerequisites
-- Node.js `v20.x` or `v24.x`
-- npm `v10.x` or `v11.x`
+### ⚖️ कायदेशीर व व्यवसायिक पार्श्वभूमी (Legal & Business Rationale)
 
-### Installation
-```powershell
-# Clone or navigate to the project directory
-cd d:\Hotel
+1. **ऑनलाईन फटाके विक्री व कुरिअर डिलिव्हरीवर कायदेशीर बंदी**:
+   - मा. सर्वोच्च न्यायालय (Supreme Court of India) व PESO (Petroleum and Explosives Safety Organisation) च्या मार्गदर्शक तत्त्वांनुसार फटाक्यांचे ऑनलाइन पेमेंट गोळा करणे, ऑनलाइन विक्री करणे आणि कुरिअरद्वारे घरपोच पोहोचवणे **कायद्याने सक्त गुन्हा** आहे.
+   - त्यामुळे हे ॲप्लिकेशन **Digital Catalog & Non-Binding Store Inquiry** मॉडेलवर चालते. ग्राहक ऑनलाईन निवड करतात, अंदाजे पावती तयार करतात, आणि अंतिम खरेदी दुकानात प्रत्यक्ष येऊनच केली जाते.
 
-# Install dependencies
-npm install
+2. **गर्दीच्या काळात जलद काऊंटर बिलिंग (Diwali Festive Rush POS)**:
+   - दिवाळीच्या ५-६ दिवसांत फटाक्यांच्या दुकानावर प्रचंड गर्दी असते. हाताने बिले बनवणे अशक्य होते.
+   - यासाठी हे **हाय-स्पीड 3-कॉलम POS टर्मिनल** बनवले आहे, ज्यामध्ये कॅशियर अवघ्या ५ सेकंदात बारकोड स्कॅन करून, अचूक जीएसटी व सवलत लावून बिल बनवू शकतो.
 
-# Start development server
-npm start
+3. **कमाल आयटम्ससाठी योग्य पावती (No Cutoff, No Shrinkage)**:
+   - ग्राहक २५ ते ५० फटाक्यांचे प्रकार खरेदी करतात तेव्हा साध्या सॉफ्टवेअरमध्ये बिल चपटे (squash) होते किंवा कट होते. या ॲपमध्ये **Multi-page Canvas Slicing** वापरून ५० आयटम्सचे बिलही अत्यंत स्वच्छपणे अनेक पानांवर प्रिंट व PDF होते.
+
+4. **ग्राहकाच्या मोबाईलवर थेट बिल (Direct Customer WhatsApp Billing)**:
+   - कागदी पावती हरवली तरी ग्राहकाच्या मोबाईलवर थेट अधिकृत पावतीचा मेसेज व इमेज पोहोचते, ज्यामुळे विश्वासार्हता वाढते.
+
+---
+
+## 3. मुख्य वैशिष्ट्ये (Key Features)
+
+```mermaid
+graph TD
+    User([वापरकर्ता User]) --> Choice{प्रकार / Role?}
+    Choice -->|ग्राहक Customer| CustPortal[कॅटलॉग Catalog<br>आवड यादी Cart<br>अंदाजे बिल Quotation<br>मोबाईल WhatsApp]
+    Choice -->|कॅशियर Staff| POSModule[काऊंटर POS बिलिंग<br>80mm थर्मल पावती<br>A4 टॅक्स इनव्हॉइस<br>साठा सांख्यिकी]
+    Choice -->|व्यवस्थापक Manager| AdminModule[फटाके व्यवस्थापन<br>सण ऑफर्स व कुपन्स<br>इन्व्हेंटरी आवक/जावक<br>विक्री अहवाल Reports]
+    Choice -->|मालक Super Admin| OwnerModule[कर्मचारी युझर्स खाते<br>दुकान लायसन्स व GST<br>सुरक्षा ऑडिट लॉग्स]
 ```
-Navigate to `http://localhost:4200` in your browser.
 
-### Test Credentials (Instant Access)
-For review and evaluation, use the one-click demo credentials buttons on the login page (`/admin/login`):
+### A. ग्राहक पोर्टल व अंदाजे बिल पावती
+- **मुखपृष्ठ (`/`)**: सण-उत्सव थीम, श्रेणी नेव्हिगेशन, लोकप्रिय फटाके, सुरक्षा मार्गदर्शक आणि दुकानाचा पत्ता/वेळ.
+- **फटाके कॅटलॉग (`/products`)**: नाव, SKU, प्रकार, किंमत यानुसार रिअल-टाइम सर्च व फिल्टरिंग.
+- **फटाका तपशील (`/products/:slug`)**: उच्च दर्जाचे फोटो, CSIR-NEERI ग्रीन क्रॅकर कोड, आवाज पातळी आणि पॅकिंग तपशील.
+- **अंदाजे कोटेशन बिल पावती (`/inquiry-cart`)**:
+  - निवडून ठेवलेल्या फटाक्यांचे अधिकृत **अंदाजे बिल (Estimate Bill)**.
+  - PESO लायसन्स, GSTIN, दुकानाचा पत्ता, ग्राहकाचे नाव, फोन व परिसर.
+  - 🖨️ **प्रिंट करा**: डायरेक्ट हार्डवेअर प्रिंटर डायलॉग.
+  - 📥 **PDF डाऊनलोड**: मल्टि-पेज हाय-क्वालिटी वेक्टर PDF.
+  - 🖼️ **PNG इमेज**: स्पष्ट इमेज फाईल सेव्ह.
+  - 📱 **थेट मोबाईलवर पाठवा**: ग्राहकाने टाकलेल्या नंबरवर थेट WhatsApp मेसेज.
 
-| Role | Email | Password | Permissions |
-| :--- | :--- | :--- | :--- |
-| **Super Admin** | `superadmin@pratikphatake.com` | `admin123` | Full access, settings, staff management, audit log |
-| **Store Manager** | `admin@pratikphatake.com` | `admin123` | Products, inventory movements, inquiries, reports |
-| **Billing Staff** | `staff@pratikphatake.com` | `staff123` | Inquiry viewing, customer contact, stock checks |
+### B. काउंटर POS बिलिंग टर्मिनल (`/admin/billing`)
+- **3-कॉलम आधुनिक POS लेआउट**:
+  - डावीकडे: कॅटलॉग, कॅटेगरी फिल्टर्स व जलद सर्च.
+  - मध्यभागी: चालू बिलिंग कार्ट, नग बदलणे, प्रति-आयटम सवलत व हटवणे.
+  - उजवीकडे: बिल सारांश, ग्राहक तपशील, पेमेंट पद्धत (रोख / UPI / कार्ड / उधारी), एकूण जीएसटी विभागणी आणि पावती निर्मिती.
+- **सवलत आणि ऑफर्स इंजिन**:
+  - आयटम-निहाय सवलत (₹ किंवा %).
+  - बिल-पातळी सवलत आणि सण कूपन कोड्स.
+  - ग्राहकाची एकूण बचत (Customer Savings) हायलाइट.
+- **अचूक आर्थिक हिशोब**:
+  - राउंड-ऑफ ॲडजस्टमेंट (Round-off adjustment).
+  - मिळालेली रोख रक्कम टाकल्यावर परत द्यायची सुट्टी रक्कम (Tendered Change) आपोआप कॅल्क्युलेट होते.
 
-*(You can also freely switch roles anytime using the role badges inside the admin sidebar!)*
+### C. कमाल आयटम्स बिल फॉरमॅट्स व प्रिंटिंग
+- **📄 A4 इनव्हॉइस**: १ ते ५०+ उत्पादने असल्यास बिल चेपले जात नाही. प्रत्येक पानात हेडर रिपीट होते (`thead`) आणि खाली पान क्रमांक (`पान १ / २`) येतो.
+- **🧾 थर्मल रोल (80mm)**: काऊंटरवरील थर्मल प्रिंटरसाठी सलग रोल (Continuous Roll PDF) जेणेकरून कागदाचा अपव्यय टळतो.
+- **📱 व्हॉट्सॲप कार्ड**: आधुनिक डार्क/व्हायलेट फेस्टिव्ह कार्ड, ज्यामध्ये सर्व खरेदी केलेले आयटम्स पूर्ण दिसतात.
+
+### D. थेट मोबाईलवर WhatsApp बिल शेअरिंग
+- बिलामध्ये ग्राहक जो मोबाईल नंबर टाकेल, त्यावर **`https://wa.me/91XXXXXXXXXX?text=...`** द्वारे थेट WhatsApp चॅट उघडते.
+- पावतीचा मजकूर (तपशील, दर, एकूण, बचत, सुरक्षा नियम) स्वयंचलितपणे टाईप होतो.
+- सोबतच पावतीची **PNG इमेज पार्श्वभूमीत डाऊनलोड** होते, जेणेकरून ती WhatsApp मध्ये एका सेकंदात अटॅच करता येते.
+
+### E. बहुभाषिक प्रणाली (3 Languages)
+- **मराठी (Default)**, **हिंदी (Hindi)** आणि **English** मध्ये संपूर्ण ॲप रिअ‍ॅक्टिव्ह सिग्नल्सद्वारे क्षणात बदलते.
+- नेव्हबार, कॅटलॉग, ॲडमिन डॅशबोर्ड, लॉगिन आणि WhatsApp बिलाचा मेसेजही निवडलेल्या भाषेत जनरेट होतो.
+
+### F. रोल-आधारित सुरक्षा आणि 4 रोल लॉगिन (`/login`)
+- **Super Admin (मुख्य व्यवस्थापक)**: संपूर्ण दुकानावर नियंत्रण, स्टाफ युझर्स निर्मिती, GST व लायसन्स सेटिंग्ज.
+- **Admin / Manager (स्टोअर मॅनेजर)**: उत्पादने जोडणे/बदलणे, इन्व्हेंटरी आवक-जावक, सण ऑफर्स, अहवाल.
+- **Staff / Cashier (काऊंटर कॅशियर)**: केवळ POS काऊंटर बिलिंग, बिल इतिहास, परतावा (Returns).
+- **Customer (नोंदणीकृत ग्राहक)**: कॅटलॉग, आवड यादी, अंदाजे कोटेशन बिल.
 
 ---
 
-## 5. Verification & Testing
+## 4. वापरलेली तंत्रज्ञाने (Technology Stack)
 
-### Running Automated Unit Tests
+| घटक / Layer | तंत्रज्ञान / Library | व्हर्जन | वैशिष्ट्ये |
+|---|---|---|---|
+| **Frontend Framework** | Angular | `22.2.2` | Standalone Components, Angular Signals, OnPush Detection, Typed Reactive Forms |
+| **Styling & Design** | Tailwind CSS & SCSS | `4.3.3` | Tailwind v4 PostCSS, `@theme` Design Tokens, Custom Glassmorphism, Print Styles |
+| **Backend & Database** | Firebase & Cloud Firestore | `15.x` | Real-time NoSQL, Security Rules v2, Indexing |
+| **Cloud Hosting** | Firebase Hosting | Production | Global CDN, SSL Certificate, SPA Rewrites |
+| **PDF Generation** | jsPDF + html2canvas | Latest | Proportional Multi-Page Canvas Slicing, Continuous 80mm Roll |
+| **Testing Framework** | Vitest | `5.0.4` | In-memory fast execution, 29 Automated Tests passing |
+| **Language Support** | Custom I18n Engine | Native Angular | Reactive signal-driven Marathi, Hindi, English translations |
+
+---
+
+## 5. प्रोजेक्ट फोल्डर रचना (Folder Structure)
+
+```text
+d:\Hotel\
+├── src\
+│   ├── app\
+│   │   ├── core\                      # कोअर मॉडेल्स, सर्व्हिसेस, गार्ड्स आणि i18n
+│   │   │   ├── guards\                # auth.guard.ts (Role-based route protection)
+│   │   │   ├── i18n\                  # translation.service.ts, translations.ts (MR, HI, EN)
+│   │   │   ├── models\                # cart.model.ts, invoice.model.ts, discount.model.ts
+│   │   │   └── services\              # pos-cart, invoice, bill-export, whatsapp-share, audit
+│   │   ├── features\                  # फिचर मॉड्यूल्स (Lazy-loaded standalone)
+│   │   │   ├── home\                  # लँडिंग पेज
+│   │   │   ├── catalog\               # फटाके कॅटलॉग व फिल्टर्स
+│   │   │   ├── product-detail\        # फटाका तपशील व स्पेसिफिकेशन्स
+│   │   │   ├── inquiry-cart\          # ग्राहक आवड यादी व अंदाजे बिल कोटेशन मोडल
+│   │   │   ├── admin\                 # ॲडमिन व काऊंटर सूट
+│   │   │   │   ├── billing\           # POS काऊंटर बिलिंग, इनव्हॉइस प्रिव्ह्यू, परतावा, इतिहास
+│   │   │   │   ├── dashboard\         # विक्री व इन्व्हेंटरी केपीआय डॅशबोर्ड
+│   │   │   │   ├── inventory\         # साठा व्यवस्थापन व मूव्हमेंट ऑडिट
+│   │   │   │   ├── products\          # फटाके जोडणे / बदलणे (CRUD)
+│   │   │   │   ├── reports\           # व्हॅल्युएशन व विक्री अहवाल
+│   │   │   │   └── login\             # युनिफाईड 4-रोल लॉगिन पोर्टल
+│   │   ├── layouts\                   # ॲडमिन लेआउट व पब्लिक लेआउट
+│   │   └── shared\                    # हेडर्स, फूटर्स, प्रॉडक्ट कार्ड, टोस्ट नोटिफिकेशन्स
+│   ├── environments\                  # environment.ts व environment.prod.ts (Firebase Config)
+│   ├── styles.scss                    # ग्लोबल स्टाईल्स आणि @media print मल्टि-पेज नियम
+│   └── index.html                     # रूट एचटीएमएल (SEO, Mukta & Poppins फॉन्ट्स)
+├── firebase.json                      # Firebase Hosting आणि Firestore डिप्लॉयमेंट नियम
+├── firestore.rules                    # क्लाउड फायरस्टोअर सुरक्षितता नियम
+├── storage.rules                      # फायरबेस स्टोरेज सुरक्षितता नियम
+├── angular.json                       # ॲंगुलर २२ बिल्ड कॉन्फिगरेशन
+├── package.json                       # प्रोजेक्ट अवलंबित्व (Dependencies)
+└── README.md                          # प्रकल्प माहिती व मार्गदर्शक पुस्तिका
+```
+
+---
+
+## 6. प्रोजेक्ट कसा चालवायचा? (How to Run)
+
+### आवश्यक आज्ञावली (Prerequisites)
+- **Node.js**: व्हर्जन `20.x` किंवा `22.x`
+- **npm**: व्हर्जन `10.x` किंवा `11.x`
+- **Git**
+
+### स्टेप १: प्रोजेक्ट डिरेक्टरीमध्ये जा (Navigate)
+```powershell
+cd d:\Hotel
+```
+
+### स्टेप २: लायब्ररी इन्स्टॉल करा (Install Dependencies)
+```powershell
+npm install
+```
+
+### स्टेप ३: डेव्हलपमेंट सर्व्हर सुरू करा (Start Development Server)
+```powershell
+npm start
+# किंवा
+ng serve
+```
+
+### स्टेप ४: ब्राउझरमध्ये उघडा (Open in Browser)
+ब्राउझर उघडा आणि खालील पत्त्यावर जा:
+👉 **`http://localhost:4200`**
+
+---
+
+## 7. चाचण्या आणि प्रॉडक्शन बिल्ड (Testing & Build)
+
+### स्वयंचलित युनिट चाचण्या चालवणे (Run Unit Tests)
+सर्व २९ युनिट चाचण्या चालवण्यासाठी खालील कमांड द्या:
 ```powershell
 npm test -- --watch=false
 ```
-Executes 10 automated unit test suites covering the root application, `TranslationService`, `ProductService`, `InquiryService`, `InventoryService`, and `AuthService`.
+**निकालाचा नमुना:**
+```text
+Test Files  4 passed (4)
+     Tests  29 passed (29)
+  Duration  4.04s
+```
+सर्व चाचण्या वित्तीय हिशोब, टॅक्स कॅल्क्युलेशन, साठा कपात आणि रोल सुरक्षा तपासतात.
 
-### Running Production Build
+### प्रॉडक्शन बिल्ड तयार करणे (Run Production Build)
 ```powershell
 npm run build
 ```
-Generates an optimized, tree-shaken, code-split production bundle inside `dist/pratik-phatake/browser` ready for Firebase Hosting.
+हे बिल्ड संपूर्ण कोड कॉम्प्रेस करून `dist/pratik-phatake/browser` मध्ये तयार करते.
 
 ---
 
-## 6. Physical Store Location
+## 8. Firebase Hosting वर डिप्लॉयमेंट (Deployment)
 
-**Pratik Phatake (प्रतीक फटाके)**  
-Shop No. 12, Phatake Galli, Laxmi Road, Pune, Maharashtra 411030  
-- **PESO License:** PESO-PUN-RET-2024/7890  
-- **Phone:** +91 98220 12345  
-- **WhatsApp:** +91 98220 12345  
-- **Hours:** 9:00 AM – 10:00 PM (All 7 Days during festive seasons)
-#   p h a t a k a _ s h o p s  
- 
+हा प्रोजेक्ट **Firebase Hosting** वर आधीच थेट डिप्लॉय केलेला आहे. तुम्हाला पुन्हा डिप्लॉय करायचे असल्यास:
+
+### स्टेप १: फायरबेस लॉगिन करा (जर आधी केले नसेल)
+```powershell
+firebase login
+```
+
+### स्टेप २: प्रोजेक्ट निवडा
+```powershell
+firebase use pratik-phatake
+```
+
+### स्टेप ३: बिल्ड करून थेट डिप्लॉय करा
+```powershell
+npm run build
+firebase deploy --only hosting --project pratik-phatake
+```
+
+### स्टेप ४: फायरस्टोअर नियम डिप्लॉय करा
+```powershell
+firebase deploy --only firestore:rules --project pratik-phatake
+```
+
+🌐 **थेट कार्यरत वेबसाईट**: **[https://pratik-phatake.web.app](https://pratik-phatake.web.app)**
+
+---
+
+## 9. डेमो लॉगिन क्रेडेन्शियल्स (Test Accounts)
+
+लॉगिन पेजवर (`/login`) १-क्लिक प्रिसेट बटणे दिलेली आहेत. तुम्ही खालील क्रेडेन्शियल्स वापरून चाचणी करू शकता:
+
+| रोल (Role) | ईमेल (Email) | पासवर्ड | अधिकार (Permissions) |
+|---|---|---|---|
+| 👑 **Super Admin** | `superadmin@pratikphatake.com` | `admin123` | दुकानावर १००% नियंत्रण, कर्मचारी खाती, GST व परवाना सेटिंग्ज |
+| 👔 **Store Manager** | `admin@pratikphatake.com` | `admin123` | उत्पादने बदलणे, इन्व्हेंटरी आवक-जावक, सण ऑफर्स, अहवाल |
+| ⚡ **Billing Staff** | `staff@pratikphatake.com` | `admin123` | काऊंटर POS बिलिंग, थर्मल पावती, परतावा आणि चौकशी तपासणी |
+| 🛍️ **Registered Customer** | `customer@pratikphatake.com` | `admin123` | कॅटलॉग, आवड यादी, अंदाजे कोटेशन पावती आणि WhatsApp |
+
+---
+
+## 10. दुकान संपर्क व परवाना माहिती
+
+**प्रतीक फटाके (PRATIK PHATAKE)**  
+दुकान क्र. १२, फटाके गल्ली, लक्ष्मी रोड, पुणे, महाराष्ट्र ४११०३०  
+- **PESO परवाना क्र:** `PESO-PUN-RET-2024/7890`  
+- **GSTIN:** `27ABCDE1234F1Z5`  
+- **फोन:** +९१ ९८२२० १२३४५  
+- **WhatsApp:** +९१ ९८२२० १२३४५  
+- **ईमेल:** `contact@pratikphatake.com`  
+- **वेळ:** सकाळी ९:०० ते रात्री १०:०० (सणासुदीच्या काळात सर्व दिवस चालू)  
+
+---
+*Developed with pride for Pratik Phatake, Pune. Designed for high-speed retail operations & statutory safety compliance.*
