@@ -18,10 +18,11 @@ export const environment = {
   business: {
     name: "Pratik Phatake",
     nameMarathi: "प्रतीक फटाके",
+    ownerName: "प्रतीक जगताप (Pratik Jagtap)",
     taglineMarathi: "सुरक्षित आणि आनंददायी दिवाळी साजरी करा",
     taglineEnglish: "Celebrate a safe, joyful & vibrant Diwali",
-    phone: "+91 98220 12345",
-    whatsapp: "+919822012345",
+    phone: "+91 93733 45328",
+    whatsapp: "+919373345328",
     email: "contact@pratikphatake.com",
     address: "Shop No. 12, Phatake Galli, Laxmi Road, Pune, Maharashtra 411030",
     licenseNo: "PESO-PUN-RET-2024/7890",

@@ -162,7 +162,7 @@ export class InquiryService {
     return true;
   }
 
-  generateWhatsAppUrl(inquiry: Inquiry, whatsappNumber: string = '919822012345'): string {
+  generateWhatsAppUrl(inquiry: Inquiry, whatsappNumber: string = '919373345328'): string {
     const itemsText = inquiry.items.map(it => `• ${it.productName} (अंदाजे ${it.quantity} नग)`).join('%0A');
     const msg = `नमस्कार प्रतीक फटाके,%0A%0Aमी आपल्या वेबसाइटवर फटाक्यांची उपलब्धता विचारण्यासाठी संपर्क करत आहे.%0A%0A*संदर्भ क्रमांक:* ${inquiry.inquiryNumber}%0A*नाव:* ${encodeURIComponent(inquiry.customerName)}%0A%0A*निवडलेले फटाके:*%0A${itemsText}%0A%0A(टीप: ही केवळ दुकानातील साठा व दर विचारण्यासाठी केलेली चौकशी आहे. मी दुकानात येऊन खरेदी करेन.)`;
     return `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=${msg}`;

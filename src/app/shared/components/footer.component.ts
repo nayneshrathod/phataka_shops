@@ -124,15 +124,19 @@ import { TranslatePipe } from '@shared/pipes/translate.pipe';
           <!-- Column 4: Physical Store Contact -->
           <div class="space-y-4">
             <h4 class="text-white text-base font-bold tracking-wider uppercase text-xs text-amber-400">
-              दुकान पत्ता व वेळ
+              दुकान संपर्क व मालक
             </h4>
             <p class="text-sm text-slate-300 leading-relaxed">
               📍 {{ settingsService.settings().address }}
             </p>
             <div class="space-y-1.5 text-sm text-slate-300">
               <p class="flex items-center gap-2">
+                <span>👑</span>
+                <span class="text-amber-300 font-semibold">मालक: {{ settingsService.settings().ownerName || 'प्रतीक जगताप (Pratik Jagtap)' }}</span>
+              </p>
+              <p class="flex items-center gap-2">
                 <span>📞</span>
-                <a [href]="'tel:' + settingsService.settings().contactNumber" class="text-amber-400 hover:underline">
+                <a [href]="'tel:' + settingsService.settings().contactNumber" class="text-amber-400 hover:underline font-bold">
                   {{ settingsService.settings().contactNumber }}
                 </a>
               </p>

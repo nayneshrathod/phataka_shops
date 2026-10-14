@@ -327,7 +327,7 @@ import { InvoicePreviewComponent } from '../invoice-preview/invoice-preview.comp
                   type="tel"
                   [ngModel]="cartService.customer().phone"
                   (ngModelChange)="cartService.setCustomer({ phone: $event })"
-                  placeholder="उदा. 9822012345"
+                  placeholder="उदा. 9373345328"
                   class="w-full px-2.5 py-1.5 text-xs rounded-lg bg-slate-900 border border-slate-800 text-white focus:outline-none focus:border-purple-500"
                 />
               </div>

@@ -123,8 +123,9 @@ export const TRANSLATIONS: Record<SupportedLang, Record<string, string>> = {
     "about.title": "प्रतीक फटाके बद्दल",
     "about.story": "गेल्या २५ वर्षांपासून आम्ही पुण्यात विश्वास, सुरक्षितता आणि आनंद घेऊन येत आहोत. आम्ही केवळ शासन-मान्यताप्राप्त हरित फटाके विकतो.",
     "contact.title": "आमच्याशी संपर्क साधा",
+    "contact.owner": "दुकान मालक: प्रतीक जगताप",
     "contact.address": "पत्ता: दुकान क्र. १२, फटाके गल्ली, लक्ष्मी रोड, पुणे ४११०३०",
-    "contact.phone": "फोन: +९१ ९८२२० १२३४५",
+    "contact.phone": "फोन: +९१ ९३७३३ ४५३२८",
     "contact.hours": "वेळ: सकाळी ९ ते रात्री १०",
 
     // Cart & Customer Estimate Bill
@@ -393,8 +394,9 @@ export const TRANSLATIONS: Record<SupportedLang, Record<string, string>> = {
     "about.title": "प्रतीक पटाखे के बारे में",
     "about.story": "पिछले 25 वर्षों से हम विश्वसनीयता, सुरक्षा और गुणवत्ता के साथ सेवा दे रहे हैं। हम केवल सरकार द्वारा अनुमोदित हरित पटाखे बेचते हैं।",
     "contact.title": "संपर्क सूत्र",
+    "contact.owner": "दुकान मालिक: प्रतीक जगताप",
     "contact.address": "दुकान नं. 12, फटाके गली, लक्ष्मी रोड, पुणे 411030",
-    "contact.phone": "फोन: +91 98220 12345",
+    "contact.phone": "फोन: +91 93733 45328",
     "contact.hours": "समय: प्रातः 9 से रात्रि 10",
 
     // Cart & Customer Estimate Bill
@@ -663,8 +665,9 @@ export const TRANSLATIONS: Record<SupportedLang, Record<string, string>> = {
     "about.title": "About Pratik Phatake",
     "about.story": "For over 25 years, Pratik Phatake has been the gold standard in Pune for safe, festive, and legally compliant fireworks celebrations. We stock only government-certified green crackers from premier Sivakasi manufacturers.",
     "contact.title": "Contact & Store Location",
+    "contact.owner": "Proprietor / Owner: Pratik Jagtap",
     "contact.address": "Shop No. 12, Phatake Galli, Laxmi Road, Pune 411030",
-    "contact.phone": "Phone: +91 98220 12345",
+    "contact.phone": "Phone: +91 93733 45328",
     "contact.hours": "Hours: 9:00 AM - 10:00 PM",
 
     // Cart & Customer Estimate Bill

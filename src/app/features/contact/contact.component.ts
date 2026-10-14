@@ -48,14 +48,27 @@ import { TranslatePipe } from '@shared/pipes/translate.pipe';
 
               <div class="flex items-start gap-4 pt-4 border-t border-purple-50">
                 <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl flex-shrink-0">
+                  👑
+                </div>
+                <div>
+                  <h3 class="font-bold text-slate-900 text-base">दुकान मालक (Store Owner)</h3>
+                  <p class="text-sm font-bold text-purple-950 mt-1">
+                    {{ settingsService.settings().ownerName || 'प्रतीक जगताप (Pratik Jagtap)' }}
+                  </p>
+                  <p class="text-xs text-slate-500 mt-0.5">अधिकृत परवानाधारक प्रोप्रायटर</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4 pt-4 border-t border-purple-50">
+                <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl flex-shrink-0">
                   📞
                 </div>
                 <div>
-                  <h3 class="font-bold text-slate-900 text-base">फोन क्रमांक</h3>
+                  <h3 class="font-bold text-slate-900 text-base">संपर्क / फोन क्रमांक</h3>
                   <a [href]="'tel:' + settingsService.settings().contactNumber" class="text-sm font-bold text-purple-700 hover:underline mt-1 block">
                     {{ settingsService.settings().contactNumber }}
                   </a>
-                  <p class="text-xs text-slate-500 mt-0.5">सकाळी ९ ते रात्री १० दरम्यान उपलब्ध</p>
+                  <p class="text-xs text-slate-500 mt-0.5">सकाळी ९ ते रात्री १० दरम्यान उपलब्ध (थेट संपर्क)</p>
                 </div>
               </div>
 

@@ -325,9 +325,9 @@ firebase deploy --only firestore:rules --project pratik-phatake
 
 लॉगिन पेजवर (`/login`) १-क्लिक प्रिसेट बटणे दिलेली आहेत. तुम्ही खालील क्रेडेन्शियल्स वापरून चाचणी करू शकता:
 
-| रोल (Role) | ईमेल (Email) | पासवर्ड | अधिकार (Permissions) |
+| रोल (Role) | ईमेल (Email) | पासवर्ड | वापरकर्ता / अधिकार (Permissions) |
 |---|---|---|---|
-| 👑 **Super Admin** | `superadmin@pratikphatake.com` | `admin123` | दुकानावर १००% नियंत्रण, कर्मचारी खाती, GST व परवाना सेटिंग्ज |
+| 👑 **Super Admin** | `superadmin@pratikphatake.com` | `admin123` | **प्रतीक जगताप (मालक)** - दुकानावर १००% नियंत्रण, कर्मचारी खाती, GST व परवाना सेटिंग्ज |
 | 👔 **Store Manager** | `admin@pratikphatake.com` | `admin123` | उत्पादने बदलणे, इन्व्हेंटरी आवक-जावक, सण ऑफर्स, अहवाल |
 | ⚡ **Billing Staff** | `staff@pratikphatake.com` | `admin123` | काऊंटर POS बिलिंग, थर्मल पावती, परतावा आणि चौकशी तपासणी |
 | 🛍️ **Registered Customer** | `customer@pratikphatake.com` | `admin123` | कॅटलॉग, आवड यादी, अंदाजे कोटेशन पावती आणि WhatsApp |
@@ -338,12 +338,13 @@ firebase deploy --only firestore:rules --project pratik-phatake
 
 **प्रतीक फटाके (PRATIK PHATAKE)**  
 दुकान क्र. १२, फटाके गल्ली, लक्ष्मी रोड, पुणे, महाराष्ट्र ४११०३०  
+- **दुकान मालक / संचालक:** श्री. प्रतीक जगताप (Pratik Jagtap)  
+- **संपर्क क्र. / फोन:** +९१ ९३७३३ ४५३२८ (+91 93733 45328)  
+- **WhatsApp थेट संपर्क:** +९१ ९३७३३ ४५३२८ (+919373345328)  
 - **PESO परवाना क्र:** `PESO-PUN-RET-2024/7890`  
 - **GSTIN:** `27ABCDE1234F1Z5`  
-- **फोन:** +९१ ९८२२० १२३४५  
-- **WhatsApp:** +९१ ९८२२० १२३४५  
 - **ईमेल:** `contact@pratikphatake.com`  
 - **वेळ:** सकाळी ९:०० ते रात्री १०:०० (सणासुदीच्या काळात सर्व दिवस चालू)  
 
 ---
-*Developed with pride for Pratik Phatake, Pune. Designed for high-speed retail operations & statutory safety compliance.*
+*Developed with pride for Pratik Jagtap, Pratik Phatake, Pune. Designed for high-speed retail operations & statutory safety compliance.*

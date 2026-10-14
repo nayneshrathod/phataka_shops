@@ -175,7 +175,7 @@ import { Product } from '@core/models';
                     </a>
 
                     <a
-                      [href]="'https://wa.me/919822012345?text=' + (translationService.currentLang() === 'en' ? 'Hello, I want to inquire about ' + (prod.name.en || prod.name.mr) : translationService.currentLang() === 'hi' ? 'नमस्ते, मैं ' + (prod.name.hi || prod.name.mr) + ' की उपलब्धता जानना चाहता हूँ' : 'नमस्कार, मी ' + prod.name.mr + ' बद्दल विचारू इच्छितो') + ' (SKU: ' + prod.sku + ')'"
+                      [href]="'https://wa.me/919373345328?text=' + (translationService.currentLang() === 'en' ? 'Hello, I want to inquire about ' + (prod.name.en || prod.name.mr) : translationService.currentLang() === 'hi' ? 'नमस्ते, मैं ' + (prod.name.hi || prod.name.mr) + ' की उपलब्धता जानना चाहता हूँ' : 'नमस्कार, मी ' + prod.name.mr + ' बद्दल विचारू इच्छितो') + ' (SKU: ' + prod.sku + ')'"
                       target="_blank"
                       rel="noopener noreferrer"
                       class="py-3 px-5 rounded-xl font-bold text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-md active:scale-95 transition-all flex items-center gap-2"

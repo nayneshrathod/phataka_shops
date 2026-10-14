@@ -123,7 +123,7 @@ import { Inquiry, InquiryItem } from '@core/models';
                   <input
                     type="tel"
                     formControlName="phone"
-                    placeholder="उदा. 9822012345"
+                    placeholder="उदा. 9373345328"
                     class="w-full px-4 py-3 rounded-xl border border-purple-200 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 bg-purple-50/20"
                     [class.border-rose-400]="isFieldInvalid('phone')"
                   />

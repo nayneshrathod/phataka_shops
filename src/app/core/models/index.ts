@@ -139,6 +139,8 @@ export interface Banner {
 export interface StoreSettings {
   businessName: string;
   businessNameMarathi: string;
+  ownerName?: string;
+  ownerPhone?: string;
   taglineMarathi: string;
   taglineEnglish: string;
   logo: string;

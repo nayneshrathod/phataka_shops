@@ -203,7 +203,7 @@ import { CustomerQuotationModalComponent } from './customer-quotation-modal.comp
                     <input
                       type="tel"
                       [(ngModel)]="customerPhone"
-                      placeholder="e.g. 9822012345"
+                      placeholder="e.g. 9373345328"
                       class="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-300 focus:border-purple-600 focus:ring-1 focus:ring-purple-600 outline-none font-mono"
                     />
                   </div>

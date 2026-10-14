@@ -1114,11 +1114,13 @@ class DemoDataService {
     return {
       businessName: 'Pratik Phatake',
       businessNameMarathi: 'प्रतीक फटाके',
+      ownerName: 'प्रतीक जगताप (Pratik Jagtap)',
+      ownerPhone: '+91 93733 45328',
       taglineMarathi: 'सुरक्षित आणि आनंददायी दिवाळी साजरी करा',
       taglineEnglish: 'Celebrate a safe, joyful & vibrant Diwali',
       logo: 'assets/logo.png',
-      contactNumber: '+91 98220 12345',
-      whatsappNumber: '+919822012345',
+      contactNumber: '+91 93733 45328',
+      whatsappNumber: '+919373345328',
       email: 'contact@pratikphatake.com',
       address: 'दुकान क्र. १२, फटाके गल्ली, लक्ष्मी रोड, पुणे, महाराष्ट्र ४११०३०',
       workingHours: 'सकाळी ९:०० ते रात्री १०:०० (सणांच्या दिवसांत रोज सुरू)',
@@ -1278,9 +1280,9 @@ class DemoDataService {
       {
         uid: 'user-super-admin-01',
         email: 'superadmin@pratikphatake.com',
-        displayName: 'प्रतीक मालक (Pratik Phatake)',
+        displayName: 'प्रतीक जगताप - मालक (Pratik Jagtap)',
         role: 'super_admin',
-        phone: '+91 98220 12345',
+        phone: '+91 93733 45328',
         active: true,
         createdAt: '2026-01-01T00:00:00Z'
       },
